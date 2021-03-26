@@ -18,12 +18,21 @@
   margin: 3rem;
   list-style: none;
 
+  /* USING GRID
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
   align-items: center;
-  // justify-content: center;
+  */
 
+  // USING FLEX
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 660px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   &__link {
     color: $color-grey-light-1;
     font-size: 1.4rem;

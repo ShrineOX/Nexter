@@ -15,8 +15,8 @@
   grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   grid-template-columns: minmax(min-content, max-content);
   gap: 2rem;
-  // Center the grid
-  justify-content: center;
+
+  justify-content: center; // Center the grid
 
   @media only screen and (max-width: $bp-small) {
     padding: 2rem 4rem;
@@ -52,22 +52,23 @@
   }
 
   &__seenon-logos {
-    /* Using flex
+    /* Using flex */
     display: flex;
-    justify-content: space-evenly;
-    */
-    // Using CSS grid
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 3rem;
-    justify-items: center;
-    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem; // space between logos when the screen width is really small
+    }
 
     img {
       max-height: 2.5rem;
       max-width: 100%;
 
       filter: brightness(60%);
+
+      @media only screen and (max-width: $bp-tiny) {
+        max-height: 1.6rem;
+      }
     }
   }
 }

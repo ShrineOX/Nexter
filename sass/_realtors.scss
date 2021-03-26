@@ -25,17 +25,26 @@
     // Show realtors in a row at max-width 800px
     @media only screen and (max-width: $bp-medium) {
       grid-template-columns: repeat(3, min-content max-content);
+      column-gap: 1rem;
     }
-    // Show realtors in column at max-width 600px
+    // Show realtors in column at max-width 500px
     @media only screen and (max-width: $bp-small) {
       grid-template-columns: repeat(2, max-content);
+      column-gap: 2.5rem;
     }
   }
 
   &__details {
+    // margin right for the row display
     @media only screen and (max-width: $bp-medium) {
       &:not(:last-child) {
         margin-right: 4rem;
+      }
+    }
+    // remove the margin right in the column display
+    @media only screen and (max-width: $bp-small) {
+      &:not(:last-child) {
+        margin-right: 0rem;
       }
     }
   }
